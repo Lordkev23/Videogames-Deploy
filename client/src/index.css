@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('https://c8.alamy.com/comp/2JCF4H2/video-game-hand-drawn-doodle-seamless-pattern-video-gamer-console-joystick-controller-element-computer-retro-arcade-play-background-wallpaper-pattern-vector-illustration-2JCF4H2.jpg');
+  background-size: 64.5%;
+  background-attachment: fixed;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
