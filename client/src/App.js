@@ -7,6 +7,9 @@ import Detail from './components/Detail';
 import styled from 'styled-components';
 import React from 'react';
 
+import axios from 'axios'
+axios.defaults.baseURL ='https://videogames-deploy-production-9817.up.railway.app/';//// cambiar a ruta del back end
+
 // const H1Card = styled.h1`
 // margin-top: 3%;
 // background-color: white;

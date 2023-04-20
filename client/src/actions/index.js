@@ -3,7 +3,7 @@ import axios from 'axios';
 //connection between front and back
 export function getVideogames(){
     return async function(dispatch){
-        var json = await axios.get('http://localhost:3001/videogamesRoutes');
+        var json = await axios.get('/videogamesRoutes');
         console.log(json)
         return dispatch({
             type: 'GET_VIDEOGAMES',
@@ -15,7 +15,7 @@ export function getVideogames(){
 
 export function getGenres(){
     return async function(dispatch){
-        const json = await axios.get('http://localhost:3001/genresRoutes');
+        const json = await axios.get('/genresRoutes');
         // console.log(json.data)
         const filerGenres = json.data.map(element => element.name)
         console.log(filerGenres)
@@ -29,7 +29,7 @@ export function getGenres(){
 
 export function getPlatforms(){
     return async function(dispatch){
-        const result = await axios.get('http://localhost:3001/platform');
+        const result = await axios.get('/platform');
         return dispatch({
             type: 'GET_PLATFORMS',
             payload: result.data
@@ -40,7 +40,7 @@ export function getPlatforms(){
 export function getVideogamesId(id){
     return async function(dispatch){
         try{
-            const result = await axios.get(`http://localhost:3001/videogameRoutes/${id}`)
+            const result = await axios.get(`/videogameRoutes/${id}`)
             return dispatch({
                 type: 'GET_VIDEOGAMES_PER_ID',
                 payload: result.data
@@ -54,7 +54,7 @@ export function getVideogamesId(id){
 export default function getVideogameName(name){
     return async function(dispatch){
         try {
-            const result = await axios.get(`http://localhost:3001/videogamesRoutes?name=${name}`);
+            const result = await axios.get(`/videogamesRoutes?name=${name}`);
             console.log(result);
             return dispatch({
                 type: 'GET_VIDEOGAMES_PER_NAME',
@@ -75,7 +75,7 @@ export default function getVideogameName(name){
 export const postVideogame = (payload) => {
     return async function () {
 
-        const postRecipe = await axios.post("http://localhost:3001/videogamesRoutes", payload)
+        const postRecipe = await axios.post("/videogamesRoutes", payload)
         return postRecipe
 
     }
@@ -84,7 +84,7 @@ export const postVideogame = (payload) => {
 
 export function deleteVideogame(payload){
     return async function(dispatch){
-        const result = await axios.post(`http://localhost:3001/videogamesRoutes/delete/:${payload}`)
+        const result = await axios.post(`/videogamesRoutes/delete/:${payload}`)
         return result;
     }
 }
